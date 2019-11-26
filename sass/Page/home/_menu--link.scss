@@ -1,0 +1,27 @@
+.menu--link {
+    background-color: $color-black;
+    height: 200px;
+    position: relative;
+
+    @include breakpoint(xs) {
+        display: none !important;
+    }
+
+    .meun--link__content {
+        width: 97%;
+        margin: 0 auto;
+
+        .first-text {
+            font-size: 30px;
+        }
+
+    }
+
+    .link {
+        height: 1px;
+        position: absolute;
+        top: 80%;
+        width: 100%;
+        background-color: rgba(169, 165, 165, 0.4);
+    }
+}

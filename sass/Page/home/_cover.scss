@@ -1,0 +1,279 @@
+.main-carousel {
+  margin-top: 100px;
+  z-index: -1 !important;
+
+  @include breakpoint(xs) {
+    margin-top: 0;
+    z-index: 0 !important;
+    height: 530px;
+
+    @include breakpoint(xss) {
+      height: 630px !important;
+    }
+
+    .owl-carousel {
+      z-index: 100 !important;
+
+      .item {
+        height: 530px !important;
+
+        @include breakpoint(xss) {
+          height: 630px !important;
+        }
+      }
+    }
+  }
+
+
+  .owl-nav {
+    position: absolute;
+    display: flex;
+    transform: translateX(2%);
+    width: 95% !important;
+    margin: 0 auto;
+    z-index: 100;
+    top: 40%;
+    justify-content: space-between !important;
+
+    @include breakpoint(xs) {
+      top: 10%;
+      width: 90% !important;
+      transform: translateX(7%) !important;
+      justify-content: space-between !important;
+
+      button {
+        outline: none;
+
+        span {
+          font-size: 65px !important;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .owl-prev {
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    .owl-next {
+      @extend .owl-prev;
+    }
+
+    button {
+      outline: none;
+
+      span {
+        font-size: 70px;
+        font-weight: 200;
+      }
+    }
+  }
+
+  .item {
+    position: relative;
+
+    .animation-box {
+      p {
+        display: none !important;
+      }
+
+      @include breakpoint(xs) {
+
+        position: relative !important;
+        top: -36px;
+        left: 0;
+        z-index: 120;
+        height: 550px;
+        width: 85%;
+        animation-name: topFadeOutMobile;
+
+        .first-text {
+          color: #333 !important;
+          left: 0 !important;
+          font-size: 28px !important;
+          color: $color-text;
+
+          &::before {
+            background-color: #333 !important;
+            margin-bottom: 20px !important;
+          }
+        }
+
+        .btn-dark {
+          left: 0 !important;
+          top: 25% !important
+        }
+
+        p {
+          display: block !important;
+          display: block;
+          margin-top: 0;
+          margin-bottom: 1rem;
+          position: relative;
+
+          @include breakpoint(xss) {
+            top: 35% !important;
+          }
+
+          top: 41%;
+          color:#333 !important;
+          font-family: "Daimler CAC";
+          font-size: 15px;
+        }
+
+      }
+
+      margin: 0 auto;
+      overflow: hidden;
+      display:block;
+      animation-name: topFadeOut;
+      animation-duration: 2s;
+      position: absolute !important;
+      top:3%;
+      left:0%;
+      width:50%;
+      height: 40%;
+
+      .first-text {
+        position: absolute;
+        left: 11.5rem;
+        top: 0rem;
+        opacity: 1;
+        animation-name: topFadeOut;
+        animation-duration: 2s;
+        color: white;
+        font-family: "Daimler CAC";
+        font-size: 38px;
+        letter-spacing: 1px;
+        line-height: 44px;
+        margin-left: 0;
+        margin-top: 60px;
+        padding: 0;
+
+        &::before {
+          background-color: #fff;
+          content: "";
+          display: block;
+          height: 2px;
+          margin-bottom: 28px;
+          margin-left: 0;
+          margin-top: 0;
+          position: relative;
+          width: 60px;
+        }
+      }
+
+      .btn-dark {
+        position: absolute;
+        left: 11.5rem;
+        top: 10rem;
+        border: none;
+        font-size: 14px;
+        font-family: "Daimler CS";
+        font-weight: 200;
+        opacity: 1;
+      }
+
+      .item-content-3 {
+        .btn-dark {
+          @include breakpoint(xs) {
+            top: 50% !important;
+          }
+        }
+      }
+    }
+
+    @keyframes topFadeOut {
+      0% {
+        position: absolute;
+        top: -3rem;
+        opacity: 0;
+      }
+
+      75% {
+        position: absolute;
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .animation-box1 {
+      @extend .animation-box;
+
+      .btn-dark {
+        position: absolute;
+        top: 12rem;
+      }
+    }
+
+    @keyframes topFadeOutMobile {
+      0% {
+        position: relative;
+        top: -12rem;
+        opacity: 0;
+      }
+
+      75% {
+        position: relative;
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .animation-box1 {
+      @extend .animation-box;
+
+      .btn-dark {
+        position: absolute;
+        top: 12rem;
+
+        @include breakpoint(xs) {
+          top: 11rem !important;
+        }
+
+        @include breakpoint(xss) {
+          top: 9rem !important;
+        }
+      }
+    }
+
+    .item-content-3 {
+      .btn-dark {
+        @include breakpoint(xs) {
+          top: 32% !important;
+        }
+
+        @include breakpoint(xss) {
+          top: 25% !important;
+        }
+      }
+    }
+
+    .item-content-1 {
+      p {
+        top: 34% !important;
+      }
+    }
+
+    .item-content-2 {
+      @include breakpoint(xss) {
+        p {
+          top: 34% !important;
+        }
+      }
+    }
+
+    .item-content-4 {
+      @extend .item-content-1;
+    }
+  }
+
+}

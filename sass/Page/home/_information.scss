@@ -1,0 +1,39 @@
+.information {
+    background-color: $color-black;
+    height: 300px;
+
+    @include breakpoint(ipadPro) {
+        height: 360px;
+    }
+
+    @include breakpoint(xs) {
+        @include breakpoint(xss) {
+            height: 700px;
+        }
+
+        height: 1172px;
+        padding: 0px 20px;
+
+        .information__content {
+            line-height: 2.0;
+        }
+
+    }
+
+    .information__content {
+        width: 95%;
+        margin: 0 auto;
+        font-size: 13px;
+        font-family: 300;
+
+        .information__item {
+            i {
+                margin: 0 10px;
+            }
+
+            span {
+                padding-left: 10px;
+            }
+        }
+    }
+}

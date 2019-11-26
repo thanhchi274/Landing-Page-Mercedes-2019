@@ -1,0 +1,103 @@
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+    @include breakpoint(xs) {
+        display: none;
+    }
+
+    position: fixed;
+    top: 50%;
+    right:0%;
+    z-index: 100 !important;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    ul {
+        li {
+            display: block;
+            color: white;
+            background: $color-darken;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                margin-left: -155px;
+            }
+
+            a {
+                text-decoration: none;
+                line-height: 30px;
+                height: 45px;
+                padding-left: 10px;
+
+                i {
+                    &:first-child {
+                        padding-top: 15px;
+                    }
+                }
+
+            }
+
+            .icon-bar1 {
+                display: none;
+                padding: 9px 10px 0px 10px;
+                margin: 0px 0px 1px 0px;
+            }
+
+            .icon-bar2 {
+                @extend .icon-bar1;
+            }
+
+            .icon-bar3 {
+                @extend .icon-bar1;
+            }
+
+            .icon-bar4 {
+                @extend .icon-bar1;
+
+                i {
+                    align-items: center !important;
+                    padding-top: 0 !important;
+                }
+            }
+        }
+    }
+
+    .icon-bar-item {
+        color: white;
+    }
+
+    .item1 {
+        &:hover {
+            .icon-bar1 {
+                display: block;
+            }
+        }
+    }
+
+    .item2 {
+        &:hover {
+            .icon-bar2 {
+                display: block;
+            }
+        }
+    }
+
+    .item3 {
+        &:hover {
+            .icon-bar3 {
+                display: block;
+            }
+        }
+    }
+
+    .item4 {
+        &:hover {
+            .icon-bar4 {
+                display: block;
+            }
+        }
+    }
+
+}

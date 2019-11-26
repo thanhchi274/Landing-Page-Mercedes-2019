@@ -1,0 +1,189 @@
+.album {
+    background-color: $color-black;
+    cursor: pointer;
+
+    @include breakpoint(xs) {
+        padding-top: 20px;
+
+        .col-6 {
+            display: block !important;
+            max-width: 100% !important;
+            flex-basis: 100%;
+
+            .img-fluid {
+                width: 100% !important;
+            }
+        }
+
+        .tab-content-description {
+            p {
+                display: none !important;
+            }
+        }
+    }
+
+    .nav-pills {
+        .nav-item {
+            .nav-link {
+                background-color: $color-black;
+                z-index: 100;
+
+                span {
+                    margin-right: 5px;
+                }
+            }
+
+            .nav-content {
+                display: block;
+            }
+
+            .active {
+                .nav-content {
+                    border-bottom: 1px solid;
+                    padding-bottom: 5px;
+                    border-bottom-color: $color-blue-darken;
+                }
+
+                color:$color-blue-darken;
+            }
+        }
+    }
+
+    .tab-content {
+        font-family: "Daimler CAC";
+        overflow-x: hidden;
+
+        .tab-pane {
+            .tab-content-detail {
+                width: 100%;
+
+                .row {
+                    .col-6 {
+                        .item-big-1 {
+                            position: relative;
+
+                            &:hover {
+                                .tab-content-description {
+                                    @include breakpoint(xs) {
+                                        height: 80px !important;
+                                        transition: none;
+                                    }
+
+                                    height: 140px;
+                                    background-color:$color-black-transparent-darken;
+
+                                    p {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+
+                            .tab-content-description {
+                                width: 100%;
+                                position: absolute;
+
+                                @include breakpoint(xs) {
+                                    position: relative;
+                                    transition: none;
+                                    height: 80px !important;
+
+                                    h5 {
+                                        padding-left: 15px !important;
+                                        padding-top: 15px !important;
+                                    }
+                                }
+
+                                bottom:0%;
+                                left:1.8%;
+                                height: 50px;
+                                padding-top:7px;
+                                transition: all 0.9s;
+                                background-color:$color-black-transparent;
+
+                                p {
+                                    font-size: 14px;
+                                    opacity: 0;
+                                    padding-left: 10px;
+                                }
+
+                                h5 {
+                                    padding-left: 10px;
+                                }
+
+                            }
+                        }
+
+                        padding:0;
+
+                        .small-1 {
+                            position: relative;
+                            padding: 0;
+                            height: 100%;
+
+                            @include breakpoint(xs) {
+
+                                height: auto !important;
+
+                                .tab-content-description {
+                                    height: 80px !important;
+                                    position: relative !important;
+                                    font-size: 21px;
+
+                                    h5 {
+                                        width: 90% !important;
+                                    }
+                                }
+                            }
+
+                            @extend .item-big-1;
+
+                            .tab-content-description {
+                                height: 33px;
+                                left: 0;
+
+                                &:hover {
+                                    @include breakpoint(xs) {
+                                        height: 80px !important;
+                                    }
+
+                                    height: 60px !important;
+                                }
+
+                                h5 {
+                                    font-size: 18px;
+
+                                    @include breakpoint(xs) {
+                                        font-size: 21px;
+                                        margin-left: 15px !important;
+                                        padding-top: 15px !important;
+                                    }
+                                }
+
+                                p {
+                                    font-size: 13px;
+                                }
+                            }
+
+                        }
+
+                        .item-small {
+                            width: 100% !important;
+                        }
+
+                    }
+
+                    .item-big-3 {
+                        .small-1 {
+                            height: auto;
+                            position: relative;
+
+                            .tab-content-description {
+                                position: absolute;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

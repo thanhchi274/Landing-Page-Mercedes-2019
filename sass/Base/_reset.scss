@@ -1,0 +1,38 @@
+html{
+    margin:0px;
+    padding:0px;
+    height:100%;
+    width:100%
+}
+body{
+    margin:0px;
+    padding:0px; 
+    height:100%;     
+    width:100%;
+    background-color:#F0F0F0;
+    color:#F0F0F0;
+    
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+    background: rgb(0, 0, 0); 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(47, 47, 47, 0.5); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 0, 0); 
+    border-radius: 10px;
+  }

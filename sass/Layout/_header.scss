@@ -1,0 +1,454 @@
+/* Navbar container */
+header{
+  .navbar{
+    @include breakpoint(xs) {
+      display:none!important;
+      z-index: 0!important;
+    }
+    .container-fluid{
+      width:88%;
+      .nav-brand{
+        height: 80px;
+        .navbar-header__brand{
+          position: relative;
+        }
+      }
+      .navbar-more{
+        position: relative;
+        margin-top:8px;
+        bottom:5px;
+        transform: translateY(-70%);
+        .privacy{
+          span{
+          padding:0px 7px;
+          margin-top:4px;
+          border: 1px solid $color-white;
+            i{
+              font-size:9px;
+              padding-left:2px;
+              padding-bottom:5px;
+          
+            }
+          }
+        }
+      }
+      .header{
+        margin-top:50px;
+      }
+    }
+    height: 115px;
+    overflow: hidden;
+    position: fixed;
+    top: 0; 
+    z-index: 100!important;
+    width: 100%;
+    transition: top 0.3s; 
+    background-color: $color-black;
+    font-family: Arial;
+    justify-content:start!important;
+    a {
+      font-size: 15.5px;
+      font-family:"Daimler CS";
+      font-weight: 100;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  }
+  .navbar-responsive{
+    display:none;
+    @include breakpoint(xs) {
+      display:block!important;
+      height: 76px;
+      background-color:$color-black;
+      position: relative;;
+      .menu {
+        position: absolute;
+        height: 80px;
+        width: 100%;
+        overflow-y: hidden!important;
+      }
+      
+      .menu-link {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 103;
+      }
+      .navbar-header__brand{
+        position: absolute;
+        left:24%;
+        top:-25%;
+        z-index: 103;
+      }
+      .privacy{
+        font-size:14px;
+        position: absolute;
+        left:73%;
+        top:5%;
+        z-index: 102;
+        span{
+        padding:0px 7px;
+        margin-top:4px;
+        border: 1px solid $color-white;
+          i{
+            font-size:9px;
+            padding-left:2px;
+            padding-bottom:5px;
+        
+          }
+        }
+      }
+    }
+      .navbar-header__logo{
+        position: relative;
+        width:45px;
+        height: 45px;
+        top:24%;
+        right: -7%;
+        bottom: 1px;
+        z-index: 103;
+      }
+      .navbar-header__searchicon{
+        position: absolute;
+        left:84%;
+        top:70%;
+        z-index: 103;
+      }
+      #language__header{
+        position: absolute;
+        left:83%;
+        top:9%;
+        z-index: 102;
+        font-size:14px;
+      }
+      .hamburger-icon {
+        position: absolute;
+        width: 20px;
+        height: 14px;
+        margin: auto;
+        left: 89%;
+        top: 60%;
+        right: 0;
+        bottom: 1px;
+        z-index: 103;
+      }
+      
+      .hamburger-bar {
+        background-color: #ffffff;
+        height: 2px;
+        width: 100%;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        transition: all 0.25s ease-in-out;
+      }
+      
+      .hamburger-bar-2 {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      
+      .hamburger-bar-3 {
+        bottom: 0;
+      }
+      
+      .menu.open .hamburger-bar-1 {
+        transform: translateY(7px) translateY(-50%) rotate(45deg);
+      }
+  
+      
+      .menu.open .hamburger-bar-2 {
+        opacity: 0;
+      }
+  
+      .menu.open .hamburger-bar-3 {
+        transform: translateY(-7px) translateY(50%) rotate(-45deg);
+      }
+  
+      
+      .menu-overlay {
+        background-color: #000000;
+        color: #fff;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        text-align: center;
+        transition: opacity 0.2s ease-in-out;
+        z-index: 102;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        ul{
+          .two-content{
+            display:none;
+            .col-md-2{
+              img{
+                @include breakpoint(iphoneX){
+                  width:280px!important;
+                }
+                @include breakpoint(galaxys5){
+                  width:270px!important;
+                }
+                width:335px;
+              }
+              margin:30px 0;
+            }
+            .car-list-detail{
+              color:$color-darken;
+              font-family: "Daimler CAC";
+            }
+          }
+          li{
+            margin: 10px 0;
+            a{
+              font-family: "Daimler CS";
+              font-size:25px;
+              font-weight: 200;
+            }
+            .navbar-header__searchoverlay{
+              font-size:20px;
+            }
+          }
+        }
+      }
+
+      .menu-overlay.open {
+        overflow-X:hidden;
+        opacity: 1;
+        visibility: visible;
+      }
+      .prompt {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      nav {   
+          position: absolute;
+          top:4%;
+          height: 580px;
+          width:100%;
+          transform: translateY(3%);
+          font-size: 50px;
+          font-family: "Daimler CS";
+          font-weight: 400;
+          text-align: center;
+      }
+      .two-content{
+        #btn--return{
+          color:$color-darken;
+          font-size:13px;
+          position: relative;
+          left:-40%;
+        }
+      }
+      ul {
+          list-style: none;
+          padding: 0;
+          display: inline-block;
+          position: relative;
+          margin: 20px;
+      }
+      
+      ul.one {
+        width:84.8%;
+        height: 100%!important;
+      }
+      
+      li {
+            display: block;
+            padding:5px;
+            position: relative;
+            opacity: 1;
+            margin: 5px;
+      }
+      
+      a {
+            display: block;
+            position: relative;
+            color: #ffffff;
+            text-decoration: none;
+            overflow: hidden;
+      }
+      
+      a.nav-links:hover {
+        background-color:#ffffff;
+        color: #000000;
+        transition: 0.6s;
+      }
+      
+      .display-inline {
+          display: inline-block;
+          margin: 0 10px 0 10px;
+      }
+      
+      input[type=text] {
+          width: 130px;
+          border: 2px solid #ffffff;
+          border-radius: 130px;
+          font-size: 16px;
+          background-color: white;
+          margin: 20px;
+          padding: 12px 20px 12px 40px;
+          -webkit-transition: width 0.4s ease-in-out;
+          transition: width 0.4s ease-in-out;
+      }
+      
+      input[type=text]:focus {
+          width: 230px;
+          outline: none;
+      }
+      
+      .social-round-icon {
+        width:45px;
+        height:45px;
+        border:2px solid #ffffff;
+        border-radius: 50%;
+        text-align: center;
+        line-height:inherit;
+        font-size: 40px;
+        padding: 15px;
+      }
+      
+      a.social-round-icon:hover {
+        background-color:#ffffff;
+        color: black;
+        box-shadow: inset 0 0 0 5px #000;
+        transition: .3s;
+      }
+      
+    }
+  }
+
+/* Links inside the navbar */
+ 
+
+/* The dropdown container */
+.dropdown {
+  overflow: hidden;
+  .dropbtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 12px 16px;
+    background-color: inherit;
+    font: inherit; 
+    margin: 0;
+  }
+  .dropdown-content {
+    z-index: 1000!important;
+    height:calc(100vh - 108px);
+    display: none;
+    position: fixed;
+    overflow-y: hidden!important;
+    background-color: $color-white ;
+    width: 100%;
+    left: 0;
+    height: 100%!important;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    #btnClose{
+      position: absolute;
+      right:1%;
+      top:1%;
+      font-size:45px;
+      font-weight: 300;
+    }
+    .row{
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      height: 700px;
+      .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        background-color: #ccc;
+        height: 250px;
+        a{
+          float: none;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        &:hover{
+          background-color: #ddd;
+        }
+        }
+      }
+    }
+    .dropdown-listcar{
+      width:90%;
+      margin:0 auto;
+      .item{
+        .img{
+          width:260px!important;
+        }
+        .car-list-detail{
+          font-family: "Daimler CAC";
+          color:$color-black;
+          font-size: 1.3rem;
+          color:$color-darken;
+          line-height: 1.5em;
+          margin-bottom: 3rem;
+          margin-top: 1.5rem;
+          text-align: center;
+        }
+      }
+      .owl-nav{
+        width:90%;
+        margin:0 auto;
+        display:flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size:50px;
+        outline:none;
+        color:$color-darken;
+        .owl-next:hover{
+          background:none!important;
+          color:$color-darken;
+          outline:none;
+        }
+        .owl-prev:hover{
+          @extend .owl-next:hover
+        }
+      }
+      .owl-dots{
+        .owl-dot:hover{
+          outline:none;
+        }
+        .active{
+        span{
+            background-color:$color-blue;
+          }
+        }
+        span{
+          width:55px;
+          height: 4px;
+          border-radius: 0;
+          background-color:$color-darken;
+        }
+        transition: all 0.4s;
+      }
+    }
+  }
+}
+/* Mega Menu header, if needed */
+.dropdown-content .header {
+  background: $color-white ;
+  padding: 16px;
+  color: $color-white ;
+}

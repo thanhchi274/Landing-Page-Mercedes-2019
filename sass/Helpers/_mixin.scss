@@ -1,0 +1,65 @@
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin breakpoint($class) {
+  @if $class==xs {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $class==xss {
+    @media (width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $class==iphoneX {
+    @media (width: 375px) {
+      @content;
+    }
+  }
+
+  @else if $class==iphone {
+    @media (width: 375px) {
+      @content;
+    }
+  }
+
+  @else if $class==galaxys5 {
+    @media (width: 360px) {
+      @content;
+    }
+  }
+
+  @else if $class==pixel {
+    @media (width: 411px) {
+      @content;
+    }
+  }
+
+  @else if $class==ipadPro {
+    @media (width: 1024px) {
+      @content;
+    }
+  }
+
+  // @else if $class==md {
+  //   @media (min-width: 992px) {
+  //     @content;
+  //   }
+  // }
+
+  @else if $class==lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
